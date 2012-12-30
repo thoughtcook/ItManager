@@ -10,6 +10,9 @@
 #define COMPUTER_H_
 #include <iostream>
 
+#define BRAND_MAX_LEN 15
+#define COLOR_MAX_LEN 10
+
 using namespace std;
 
 //Class: Memory
@@ -39,10 +42,10 @@ private:
     double CPUFreq; //Unit: GHz
 public:
     CPU();
-    CPU(const char *c_brand, const int c_freq);
+    CPU(const char *c_brand, const double c_freq);
     ~CPU();
     
-   void update_c(int c_freq) {CPUFreq = c_freq;}
+   void update_c(double c_freq) {CPUFreq = c_freq;}
    friend ostream &operator<< (ostream &os, const CPU &c);
 };
 

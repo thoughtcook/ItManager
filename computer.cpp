@@ -1,13 +1,14 @@
-//Filename: computer.cpp
-//Filefunc: 
-//Coder:    Huangqiang
-//Version:  v0.1
+//Filename:  computer.cpp
+//Filefunc:  Implementation of Computer Class
+//Coder:     Johnny Huang
+//Version:   v0.1
+//Date:      2012/12/25
+//--------------Modification Log-------------
+//--12.29.2012--Add class Memory/CPU/Disk
 
 #include <cstring>
 #include <iostream>
 #include "computer.h"
-
-#define BRAND_MAX_LEN 15
 
 //Class Memory constructor
 //default
@@ -57,7 +58,7 @@ Memory Memory::operator+ (const Memory& mem) const
 
 ostream& operator<< (ostream &os, const Memory &m)
 {
-     os << "----------Memory info-----------" << endl;
+     os << "----------Memory info----------" << endl;
      os << "Brand:   " << m.Brand << endl;
      os << "Size:    " << m.MemorySize << endl;
      return os;
@@ -76,7 +77,7 @@ CPU::CPU()
 //Class CPU constructor
 //---e.g.---CPU Intel ("Intel", 1.5);
 
-CPU::CPU(const char *c_brand, const int c_freq)
+CPU::CPU(const char *c_brand, const double c_freq)
 {
     int len = strlen(c_brand);
     Brand = new char[len+1];
@@ -92,7 +93,7 @@ CPU::~CPU()
 
 ostream &operator<< (ostream &os, const CPU &c)
 {
-    os << "-----------CPU info----------" << endl;
+    os << "----------CPU info----------" << endl;
     os << "Brand:    " << c.Brand << endl;
     os << "Freq:     " << c.CPUFreq << endl;
     return os;
@@ -138,7 +139,7 @@ Disk::Disk(const Disk &d)
 
 ostream &operator<< (ostream &os, const Disk &d)
 {
-    os << "------------Disk info------------" << endl;
+    os << "----------Disk info----------" << endl;
     os << "Brand:     " << d.Brand << endl;
     os << "Size:      " << d.DiskSize << endl;
     return os;
