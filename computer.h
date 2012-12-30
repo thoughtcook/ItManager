@@ -76,7 +76,7 @@ private:
    Disk cDisk;
 public:
    Computer() : cCPU("INITC", 1.2), cMem("INITM", 1024), cDisk("INITD", 500) {}
-
+   
    virtual void Update_Hw(const char *Component, const int size);
    virtual void Show_Hwinfo();
 };
