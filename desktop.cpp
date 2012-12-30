@@ -9,8 +9,10 @@
 #include <cstring>
 #include "desktop.h"
 
+//use DesktopNum to record the totall number of Desktop we have
 int Desktop::DesktopNum = 0;
 
+//Constructor of Class Desktop
 Desktop::Desktop() : Computer()
 {
     Brand = new char[BRAND_MAX_LEN];
@@ -21,6 +23,7 @@ Desktop::Desktop() : Computer()
 	DesktopNum++;
 }
 
+//Destructor of Class Desktop
 Desktop::~Desktop()
 {
     DesktopNum--;
@@ -28,6 +31,8 @@ Desktop::~Desktop()
     delete [] BoxColor;
 }
 
+//Update the hardware component of Desktop
+//You can update DISP(Display)/CPU/MEM/DISK
 void Desktop::Update_Desktop(const char *Component, const int num)
 {
     if(strcmp(Component, "DISP") == 0)
@@ -40,6 +45,7 @@ void Desktop::Update_Desktop(const char *Component, const int num)
 	}
 }
 
+//Show the hardware info of Desktop
 void Desktop::Show_Hwinfo()
 {
     cout << "------------------------------------" << endl;

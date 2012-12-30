@@ -5,11 +5,14 @@
 //Date:      2012/12/29
 //--------------Modification Log-------------
 //--12.29.2012--Init
+
 #include <cstring>
 #include "laptop.h"
 
+//LaptopNum to record the total number of Laptop
 int Laptop::LaptopNum = 0;
 
+//Constructor of Laptop 
 Laptop::Laptop() : Computer()
 {
     Brand = new char[BRAND_MAX_LEN];
@@ -18,17 +21,21 @@ Laptop::Laptop() : Computer()
     LaptopNum++;
 }
 
+//Destructor of Laptop
 Laptop::~Laptop()
 {
     delete [] Brand;
     LaptopNum--;
 }
 
+//Update the Hardware component of Laptop
+//You can update the CPU/MEM/DISK
 void Laptop::Update_Laptop(const char *Component, const int num)
 {
     Computer::Update_Hw(Component, num);
 }
- 
+
+//Show the hardware info of Laptop 
 void Laptop::Show_Hwinfo()
 {
     cout << "-------------------------------" << endl;

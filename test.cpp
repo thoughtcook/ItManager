@@ -1,5 +1,5 @@
 //Filename:  test.cpp
-//Filefunc:  The test case to validation
+//Filefunc:  The testcases
 //Coder:     Johnny Huang
 //Version:   v0.1
 //Date:      2012/12/25
@@ -24,6 +24,7 @@ int main()
     return 0; 
 }
 
+//Test Class Computer
 void test_computer()
 {
     Computer Dell;
@@ -36,6 +37,7 @@ void test_computer()
 	cout << "-----We now have " << Dell.Howmany() << " computers.---" << endl;
 }
 
+//Test Class Desktop
 void test_desktop()
 {
     Desktop HP;
@@ -53,6 +55,7 @@ void test_desktop()
 	cout << "We have " << sum << " Desktops. " << endl;
 }
 
+//Test Class Laptop
 void test_laptop()
 {
     Laptop Lenovo;
@@ -68,6 +71,7 @@ void test_laptop()
 	cout << "We have " << sum << " Laptop." << endl;
 }
 
+//Test Class Pad
 void test_pad()
 {
     Pad ipad;

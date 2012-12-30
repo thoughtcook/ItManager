@@ -9,8 +9,10 @@
 #include "pad.h"
 #include <cstring>
 
+//PadNum to record the total number of Pad
 int Pad::PadNum = 0;
 
+// Constructor of Class Pad
 Pad::Pad() : Computer()
 {
     Brand = new char[BRAND_MAX_LEN];
@@ -20,12 +22,14 @@ Pad::Pad() : Computer()
     PadNum++;
 }
 
+//Destructor of Class Pad
 Pad::~Pad()
 {
     delete [] Brand;
     PadNum--;
 }
 
+//Show the hardware info of Pad
 void Pad::Show_Hwinfo()
 {
     cout << "------------PAD--------------" << endl;

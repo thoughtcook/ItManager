@@ -58,7 +58,7 @@ Memory Memory::operator+ (const Memory& mem) const
     return memTemp;
 }
 
-
+//Operator "<<" overload for Memory
 ostream& operator<< (ostream &os, const Memory &m)
 {
      os << "----------Memory info----------" << endl;
@@ -79,7 +79,6 @@ CPU::CPU()
 
 //Class CPU constructor
 //---e.g.---CPU Intel ("Intel", 1.5);
-
 CPU::CPU(const char *c_brand, const double c_freq)
 {
     int len = strlen(c_brand);
@@ -94,6 +93,7 @@ CPU::~CPU()
     delete [] Brand;
 }
 
+//Operator "<<" overload for CPU
 ostream &operator<< (ostream &os, const CPU &c)
 {
     os << "----------CPU info----------" << endl;
@@ -130,7 +130,6 @@ Disk::~Disk()
 
 //Class Disk method: Disk(const Disk &d)
 //---e.g.--- Disk Sandisk = westdisk;
-
 Disk::Disk(const Disk &d)
 {
     int len = strlen(d.Brand);
@@ -139,7 +138,7 @@ Disk::Disk(const Disk &d)
     DiskSize = d.DiskSize;
 }
 
-
+//Operator "<<" overload for Disk
 ostream &operator<< (ostream &os, const Disk &d)
 {
     os << "----------Disk info----------" << endl;
@@ -172,6 +171,7 @@ void Computer::Update_Hw(const char *Component, const int size)
     }
 }
 
+//Show Hardware info of Computer
 void Computer::Show_Hwinfo()
 {
      cout << cCPU;
