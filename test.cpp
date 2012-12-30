@@ -8,16 +8,19 @@
 
 #include "desktop.h"
 #include "laptop.h"
+#include "pad.h"
+
 void test_computer();
 void test_desktop();
 void test_laptop();
+void test_pad();
 
 int main()
 {
     test_computer();
 	test_desktop();
 	test_laptop();
-    	
+    test_pad();	
     return 0; 
 }
 
@@ -30,6 +33,7 @@ void test_computer()
 	Dell.Update_Hw("CPU", 2);
 	Dell.Update_Hw("MEM", 2048);
 	Dell.Show_Hwinfo();
+	cout << "-----We now have " << Dell.Howmany() << " computers.---" << endl;
 }
 
 void test_desktop()
@@ -59,4 +63,18 @@ void test_laptop()
 	Lenovo.Update_Laptop("DISK", 600);
 	Lenovo.Update_Laptop("MEM", 2048);
 	Lenovo.Show_Hwinfo();
+	
+	sum = Lenovo.Howmany();
+	cout << "We have " << sum << " Laptop." << endl;
+}
+
+void test_pad()
+{
+    Pad ipad;
+	int sum;
+	cout << "-------INIT A ipad PAD----------" << endl;
+	ipad.Show_Hwinfo();
+	sum = ipad.Howmany();
+	
+	cout << "We have " << sum << " PAD. " << endl;
 }

@@ -10,6 +10,9 @@
 #include <iostream>
 #include "computer.h"
 
+// TO record the number of Computer created
+int Computer::computer_num = 0;
+
 //Class Memory constructor
 //default
 Memory::Memory()
