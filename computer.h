@@ -24,7 +24,7 @@ private:
 public:
     Memory();
     Memory(const char *m_brand, const int m_size);
-    ~Memory();
+    virtual ~Memory();
     Memory(const Memory &mem);
     Memory operator+ (const Memory& mem) const;
     Memory operator+ ( const int m_size) { MemorySize += m_size; }
@@ -43,7 +43,7 @@ private:
 public:
     CPU();
     CPU(const char *c_brand, const double c_freq);
-    ~CPU();
+    virtual ~CPU();
     
    void update_c(double c_freq) {CPUFreq = c_freq;}
    friend ostream &operator<< (ostream &os, const CPU &c);
@@ -58,7 +58,7 @@ private:
 public:
     Disk();
     Disk(const char *d_brand, const int d_size);
-    ~Disk();
+    virtual ~Disk();
     Disk(const Disk& d);
     Disk operator+ (const int d_size) {DiskSize += d_size;}
     void update_d(int d_size) { DiskSize = d_size;}
