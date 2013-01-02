@@ -6,17 +6,14 @@
 //--------------Modification Log-------------
 //--12.29.2012--Init
 
-#include <cstring>
 #include "laptop.h"
 
 //LaptopNum to record the total number of Laptop
 int Laptop::LaptopNum = 0;
 
 //Constructor of Laptop 
-Laptop::Laptop() : Computer()
+Laptop::Laptop() : Computer(), Brand ("Lenovo")
 {
-    Brand = new char[BRAND_MAX_LEN];
-    strcpy(Brand, "INTIL");
     LaptopSize = 14;
     LaptopNum++;
 }
@@ -24,7 +21,6 @@ Laptop::Laptop() : Computer()
 //Destructor of Laptop
 Laptop::~Laptop()
 {
-    delete [] Brand;
     LaptopNum--;
 }
 
@@ -39,7 +35,7 @@ void Laptop::Update_Laptop(const char *Component, const int num)
 void Laptop::Show_Hwinfo()
 {
     cout << "-------------------------------" << endl;
-	cout << Brand << "Hareware info: " << endl;
+	cout << Brand << " Hareware info: " << endl;
 	cout << "Laptop Size: " << LaptopSize << endl;
 	Computer::Show_Hwinfo();
 }

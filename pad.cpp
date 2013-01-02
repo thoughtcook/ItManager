@@ -33,7 +33,7 @@ Pad::~Pad()
 void Pad::Show_Hwinfo()
 {
     cout << "------------PAD--------------" << endl;
-	cout << Brand << "Hardware info:" << endl;
+	cout << Brand << " Hardware info:" << endl;
 	cout << "PadSize: " << PadSize << endl;
 	cout << "Weight:" << Weight << endl;
 	Computer::Show_Hwinfo();
