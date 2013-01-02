@@ -96,6 +96,9 @@ CPU::~CPU()
 //Operator "<<" overload for CPU
 ostream &operator<< (ostream &os, const CPU &c)
 {
+    os.precision(2);
+	cout.setf(ios_base::fixed, ios_base::floatfield);
+	cout.setf(ios_base::showpoint);
     os << "----------CPU info----------" << endl;
     os << "Brand:    " << c.Brand << endl;
     os << "Freq:     " << c.CPUFreq << endl;
